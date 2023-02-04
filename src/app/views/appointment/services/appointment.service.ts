@@ -21,10 +21,13 @@ export class AppointmentService {
     return this.httpClient.get<Appointments>(`${API}/appointments`);
   }
 
+  getById(id:String){
+    return this.httpClient.get<Appointment>(`${API}/appointments/${id}`);
+  }
   create(appointment: Appointment): Observable<Appointment> {
     return this.httpClient.post<Appointment>(`${API}/appointments`, appointment);
   }
-  
+
   getTypeService(): Observable<any> {
     return this.httpClient.get<any>(`${API}/typeServices`);
   }

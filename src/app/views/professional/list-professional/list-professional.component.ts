@@ -51,7 +51,7 @@ export class ListProfessionalComponent {
     });
   }
 
-  perfilClient(professional: Professional) {
+  perfilProfessional(professional: Professional) {
     this.router.navigate(['/professional/' + professional.id]);
   }
 
@@ -68,5 +68,5 @@ export class ListProfessionalComponent {
   }
   checkSelected($event: Event) {}
 
-  
+
 }

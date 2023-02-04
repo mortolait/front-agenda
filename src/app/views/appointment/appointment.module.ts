@@ -20,9 +20,7 @@ import { NewAppointmentComponent } from './new-appointment/new-appointment.compo
   imports: [
     AppointmentRoutingModule,
     ClientsRoutingModule,
-  
     SharedModule,
-
   ],
 })
 export class AppointmentModule {}

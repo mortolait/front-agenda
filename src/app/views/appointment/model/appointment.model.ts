@@ -1,9 +1,11 @@
 export interface Appointment{
-    date:Date,
+    id: String,
+    date:string,
     time: any,
     professional: any,
     Client: any,
     service: any,
+    value:number,
     status: String,
     obs: String,
     address: String,

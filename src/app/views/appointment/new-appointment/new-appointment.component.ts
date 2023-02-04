@@ -44,7 +44,7 @@ export class NewAppointmentComponent {
   }
 
   register() {
-    console.log(this.newAppointmentForm.value);
+    console.log(this.newAppointmentForm);
     this.appointmentService.create(this.newAppointmentForm.value).subscribe({
       next: (response) => {
         console.log(response);

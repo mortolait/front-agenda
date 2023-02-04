@@ -1,5 +1,6 @@
+import { Router } from '@angular/router';
+import { Appointment } from './../model/appointment.model';
 import { Component } from '@angular/core';
-import { Appointment } from '../model/appointment.model';
 
 import { AppointmentService } from '../services/appointment.service';
 
@@ -9,9 +10,9 @@ import { AppointmentService } from '../services/appointment.service';
   styleUrls: ['./list-appointment.component.scss'],
 })
 export class ListAppointmentComponent {
-  constructor(public appointmentService: AppointmentService) {}
+  constructor(public appointmentService: AppointmentService, private router: Router) { }
 
-  visible:boolean =  false
+  visible: boolean = false
   itemSelectd!: Appointment;
 
   columns = [
@@ -21,7 +22,7 @@ export class ListAppointmentComponent {
       _style: { width: '25%' },
     },
     { key: 'client_name', label: 'Cliente', _style: { width: '25%' } },
-    { key: 'date', label: 'Data', filter: true, sorter: true, _style: { width: '15%' }} ,
+    { key: 'date', label: 'Data', filter: true, sorter: true, _style: { width: '15%' } },
     { key: 'time', label: 'Horario', _style: { width: '15%' } },
     { key: 'service', label: 'Serviço', _style: { width: '20%' } },
     {
@@ -63,7 +64,7 @@ export class ListAppointmentComponent {
         return 'primary';
     }
   }
-  
+
   getItem(item: any) {
     return Object.keys(item);
   }
@@ -72,5 +73,10 @@ export class ListAppointmentComponent {
 
   toggleDetailst(item: any) {
     this.details_visible[item] = !this.details_visible[item];
+  }
+
+
+  perfilAppointment(appointment: Appointment) {
+    this.router.navigate(['/appointment/' + appointment.id]);
   }
 }
