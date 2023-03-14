@@ -49,6 +49,8 @@ export class PerfilAppointmentComponent {
     this.idAppointment = this.activetedRouter.snapshot.params?.['id']
     this.getAppointment()
 
+    console.log(this.profesisonalService.professionals)
+
   }
   getClients() {
     this.clientService.get().subscribe({
@@ -61,8 +63,9 @@ export class PerfilAppointmentComponent {
 
   getProfessional(){
     this.profesisonalService.get().subscribe({
-      next: (professional) => {
-        this.profesisonalService.professionals = professional
+      next: (professionals) => {
+        console.log({professionals})
+        this.profesisonalService.professionals = professionals
       },
       error: (err) => console.log('Error', err)
     })
@@ -70,7 +73,7 @@ export class PerfilAppointmentComponent {
   getAppointment() {
     this.appointmentService.getById(this.idAppointment).subscribe({
       next: (appointment) => {
-        console.log(appointment)
+        console.log(appointment.professional)
         appointment.date = moment(new Date(appointment.date)).format('YYYY-MM-DD')
         this.perfilAppointmentForm.patchValue(appointment)
       },

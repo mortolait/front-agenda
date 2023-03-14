@@ -1,0 +1,15 @@
+.card-details{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.card-details svg {
+  margin-right: 1rem;
+  color: #ccc;
+}
+.details{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+

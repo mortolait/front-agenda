@@ -4,7 +4,7 @@
       <a
         cButton
         color="primary"
-        routerLink="new-appointment"
+        routerLink="../new-appointment"
         class="buttonInclud"
         >Novo Registro</a
       >
@@ -36,7 +36,7 @@
                 <button
                   cButton
                   class="ms-1"
-                  (click)="handleLiveDemoChange(item)"
+                  (click)="deleteItem(item.id)"
                   color="danger"
                   size="sm"
                 >

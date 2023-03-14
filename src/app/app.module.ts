@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './core/auth/auth.module'
+import { CalendarComponent } from "../app/views/appointment/calendar/calendar.component"
 import {
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface,
@@ -49,6 +50,7 @@ import {
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { NewAppointmentComponent } from './views/appointment/new-appointment/new-appointment.component';
+import { AppointmentModule } from './views/appointment/appointment.module';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -59,7 +61,7 @@ const APP_CONTAINERS = [
   DefaultFooterComponent,
   DefaultHeaderComponent,
   DefaultLayoutComponent,
-  EmailLayoutComponent,
+  EmailLayoutComponent
 ];
 
 const maskConfig: Partial<IConfig> = {
@@ -69,6 +71,7 @@ const maskConfig: Partial<IConfig> = {
 @NgModule({
   declarations: [AppComponent, ...APP_CONTAINERS],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -96,7 +99,8 @@ const maskConfig: Partial<IConfig> = {
     CardModule,
     HttpClientModule,
     NgxMaskModule.forRoot(),
-    AuthModule
+    AuthModule,
+    
   ],
   providers: [
     {

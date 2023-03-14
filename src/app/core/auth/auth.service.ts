@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
   login(user: String, password: String):Observable<any>{
-    return this.httpClient.post<any>(`${environment.url_base}/user/login`, {
+    return this.httpClient.post<any>(`${environment.url_base}/users/login`, {
       user: user,
       password: password,
     });

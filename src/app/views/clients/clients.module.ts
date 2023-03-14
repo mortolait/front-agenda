@@ -21,7 +21,7 @@ import {
   DatePickerModule,
   DateRangePickerModule,
   TimePickerModule,
-  ModalModule 
+  ModalModule
 } from '@coreui/angular-pro';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -34,7 +34,6 @@ import { NgxMaskModule } from 'ngx-mask';
 import { DocsComponentsModule } from '@docs-components/docs-components.module';
 import { SmartTablesRoutingModule } from '../smart-tables/smart-tables-routing.module';
 import { ModalConfirmComponent } from './modal-confirm/modal-confirm.component';
-import {ListClientsComponentTypeScript} from '../appointment/list-clients/list-clients.component';
 import { ListAppointmentComponent } from '../appointment/list-appointment/list-appointment.component';
 @NgModule({
   declarations: [
@@ -43,7 +42,7 @@ import { ListAppointmentComponent } from '../appointment/list-appointment/list-a
     PerfilClientsComponent,
     NewClientComponent,
     ModalConfirmComponent,
-    ListClientsComponentTypeScript,
+
     ListAppointmentComponent
   ],
   imports: [
@@ -80,7 +79,7 @@ import { ListAppointmentComponent } from '../appointment/list-appointment/list-a
     DatePickerModule,
     DateRangePickerModule,
     TimePickerModule,
-    ModalModule 
+    ModalModule
   ],
 })
 export class ClientsModule {}

@@ -5,13 +5,13 @@ import { AppointmentComponent } from './appointment.component'
 import { ListAppointmentComponent } from './list-appointment/list-appointment.component';
 import { NewAppointmentComponent } from './new-appointment/new-appointment.component';
 import { PerfilAppointmentComponent } from './perfil-appointment/perfil-appointment.component';
-import { ListClientsComponentTypeScript } from './list-clients/list-clients.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: AppointmentComponent,
-    children:[
+    children: [
       {
         path:'',
         component: ListAppointmentComponent,
@@ -20,27 +20,34 @@ const routes: Routes = [
         },
       },
       {
-        path:'new-appointment',
+        path: 'list',
+        component: ListAppointmentComponent,
+        data: {
+          title: $localize`Lista de apontamentos`,
+        },
+      },
+      {
+        path: 'new-appointment',
         component: NewAppointmentComponent,
         data: {
           title: $localize`Novo apontamento`,
         },
       },
       {
-        path:'list',
-        component: ListClientsComponentTypeScript,
+        path: 'calendar',
+        component: CalendarComponent,
         data: {
-          title: $localize`teste`,
+          title: $localize`Calendario`,
         },
       },
       {
-        path:':id',
+        path: ':id',
         component: PerfilAppointmentComponent,
         data: {
           title: $localize`Perfil apontamento`,
         },
       },
-    
+
     ]
   }
 ];

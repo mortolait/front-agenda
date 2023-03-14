@@ -15,7 +15,7 @@
       <c-header-brand class="me-auto d-md-none d-flex ms-2 text-white">
         <svg [cIcon]="logoNegative" class="sidebar-brand-full" height="34"></svg>
       </c-header-brand>
-      <form class="d-none d-md-flex me-auto ms-2">
+      <!-- <form class="d-none d-md-flex me-auto ms-2">
         <c-input-group>
           <span cInputGroupText id="search-addon" class="bg-light border-0 px-1">
             <svg cIcon name="cilSearch" size="lg" class="my-1 mx-2 text-disabled"></svg>
@@ -29,8 +29,8 @@
             aria-describedby="search-addon"
           >
         </c-input-group>
-      </form>
-  
+      </form> -->
+
       <!-- todo: header nav dropdown menus  -->
       <c-header-nav class="d-none d-lg-flex ms-auto">
         <ng-container *ngTemplateOutlet="notifyDropdown"></ng-container>
@@ -40,7 +40,7 @@
       <c-header-nav class="mx-0">
         <ng-container *ngTemplateOutlet="userDropdown"></ng-container>
       </c-header-nav>
-  
+
       <!--aside toggler-->
       <button
         toggle="visible"
@@ -53,7 +53,7 @@
     </c-container>
   </ng-container>
   <!--</c-header>-->
-  
+
   <ng-template #userDropdown>
     <c-dropdown alignment="end" variant="nav-item">
       <a href
@@ -157,7 +157,7 @@
       </ul>
     </c-dropdown>
   </ng-template>
-  
+
   <ng-template #messagesDropdown>
     <c-dropdown alignment="end" variant="nav-item">
       <a [caret]="false" cDropdownToggle href>
@@ -270,7 +270,7 @@
       </div>
     </c-dropdown>
   </ng-template>
-  
+
   <ng-template #notifyDropdown>
     <c-dropdown alignment="end" variant="nav-item">
       <a [caret]="false" cDropdownToggle href>
@@ -355,7 +355,7 @@
       </div>
     </c-dropdown>
   </ng-template>
-  
+
   <ng-template #taskDropdown>
     <c-dropdown alignment="end" variant="nav-item">
       <a [caret]="false" cDropdownToggle href>
@@ -445,4 +445,3 @@
       </div>
     </c-dropdown>
   </ng-template>
-  

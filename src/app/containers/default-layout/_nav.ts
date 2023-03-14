@@ -17,9 +17,19 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-user' },
   },
   {
-    name: 'Apontamento',
+    name: 'Agenda',
     url: '/appointment',
-    iconComponent: { name: 'cil-user' },
+    iconComponent: { name: 'cil-calendar' },
+    children: [
+      {
+        name: 'Calendario',
+        url: '/appointment/calendar',
+      },
+      {
+        name:'Lista',
+        url: '/appointment/list',
+      }
+    ]
   },
   {
     title: true,

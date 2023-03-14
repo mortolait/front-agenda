@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Appointment, Appointments } from '../model/appointment.model';
 import { environment } from 'src/environments/environment';
+import { FullCalendarComponent } from '@fullcalendar/angular';
 
 const API = environment.url_base;
 
@@ -12,10 +13,23 @@ const API = environment.url_base;
 })
 export class AppointmentService {
 
+  private calendar!: FullCalendarComponent;
+
   constructor(private httpClient: HttpClient) { }
 
   list!: Appointments;
   typesService!: any;
+
+  setCalendar(calendar: FullCalendarComponent): void {
+    this.calendar = calendar;
+  }
+
+  updateCalendarSize(): void {
+    setTimeout(() => {
+      this.calendar.getApi().updateSize();
+    }, 1000);
+  }
+  
 
   get(): Observable<Appointments> {
     return this.httpClient.get<Appointments>(`${API}/appointments`);
@@ -30,6 +44,10 @@ export class AppointmentService {
 
   getTypeService(): Observable<any> {
     return this.httpClient.get<any>(`${API}/typeServices`);
+  }
+
+  delete(id:string): Observable<any> {
+    return this.httpClient.delete<any>(`${API}/appointments/${id}`);
   }
 
   createService(){

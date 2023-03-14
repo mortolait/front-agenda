@@ -4,6 +4,7 @@ import { filter, map } from 'rxjs/operators';
 
 import { logoNegative, sygnet } from '../../icons/brand';
 import { navItems } from './_nav';
+import { AppointmentService } from 'src/app/views/appointment/services/appointment.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,8 @@ import { navItems } from './_nav';
 export class DefaultLayoutComponent {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private appointmentService:AppointmentService
   ) {
     this.titleSubscribe();
   }
@@ -28,6 +30,10 @@ export class DefaultLayoutComponent {
     suppressScrollX: true
   };
 
+  onButtonClick(): void {
+    this.appointmentService.updateCalendarSize();
+  }
+  
   titleSubscribe() {
     this.router.events.pipe(
       filter(event => event instanceof ActivationEnd && !event.snapshot.firstChild),

@@ -79,4 +79,14 @@ export class ListAppointmentComponent {
   perfilAppointment(appointment: Appointment) {
     this.router.navigate(['/appointment/' + appointment.id]);
   }
+  deleteItem(id:string){
+    this.appointmentService.delete(id).subscribe({
+      next: (appointments) => {
+        this.getAppointments();
+      },
+      error: (err) => console.log('Error', err),
+      
+    }
+    );
+  }
 }

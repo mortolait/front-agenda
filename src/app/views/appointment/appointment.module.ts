@@ -8,19 +8,24 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { ClientsRoutingModule } from '../clients/clients-routing.module';
 import { NewAppointmentComponent } from './new-appointment/new-appointment.component';
-
+import { CalendarComponent } from './calendar/calendar.component';
+import { IconModule } from '@coreui/icons-angular';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
     AppointmentComponent,
     // ListAppointmentComponent,
     PerfilAppointmentComponent,
-    NewAppointmentComponent
+    NewAppointmentComponent,
+    CalendarComponent
   ],
   imports: [
     AppointmentRoutingModule,
     ClientsRoutingModule,
     SharedModule,
+    FullCalendarModule,
+    IconModule
   ],
 })
 export class AppointmentModule {}
